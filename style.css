@@ -29,7 +29,7 @@ recipes {
     display: inline-block;
     border: solid 0px black;
     height: 800px;
-    width: 45%;
+    width: 95%;
     overflow: scroll;
     position: relative;
     padding-left: 20px;
@@ -37,13 +37,3 @@ recipes {
 
 }
 
-nutrient-info {
-    display: inline-block;
-    border: solid 0px black;
-    height: 800px;
-    width: 45%;
-    overflow: scroll;
-    position: relative;
-    padding-left: 50px;
-    font-size: 25px;
-}
