@@ -10,12 +10,6 @@ const renderResponse = (res) => {
     var response = JSON.stringify(res.hits[i].recipe);
     $('#listed-recipes').append(response); 
   }
-  /** 
-  res.hits.forEach(recipe => {
-    var response = JSON.stringify(recipe);
-    $('#listed-recipes').append(response);
-  });
-  */
 };
 
 const recipesField = document.querySelector('#listed-recipes');
