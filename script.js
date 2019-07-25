@@ -5,10 +5,17 @@ const app_key = '&app_key=9b4713aba7e3dc1fa7798b2bfdf237da'
 
 
 const renderResponse = (res) => {
+  var arrayLength = res.hits.length;
+  for (var i = 0; i < arrayLength; i += 3) {
+    var response = JSON.stringify(res.hits[i].recipe);
+    $('#listed-recipes').append(response); 
+  }
+  /** 
   res.hits.forEach(recipe => {
     var response = JSON.stringify(recipe);
     $('#listed-recipes').append(response);
   });
+  */
 };
 
 const recipesField = document.querySelector('#listed-recipes');
