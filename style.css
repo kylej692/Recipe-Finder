@@ -37,3 +37,39 @@ recipes {
 
 }
 
+.name {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.yield {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.ingredients {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.calories {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.weight {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.diet-labels {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+    border-bottom: solid 1px black;
+}
