@@ -41,6 +41,7 @@ recipes {
     font-weight: 550;
     font-size: 20px;
     padding: 5px;
+    border-top: solid 1px black;
 }
 
 .yield {
@@ -71,5 +72,16 @@ recipes {
     font-weight: 550;
     font-size: 20px;
     padding: 5px;
-    border-bottom: solid 1px black;
+}
+
+.info {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.ingredientweight {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 5px;
 }
