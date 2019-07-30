@@ -11,28 +11,36 @@ $(document).ready(function() {
     var arrayLength = res.hits.length;
 
     for (var i = 0; i < arrayLength; i += 3) {
-
       var label = JSON.stringify(res.hits[i].recipe.label);
       var yield = JSON.stringify(res.hits[i].recipe.yield);
-      var calories = JSON.stringify(res.hits[i].recipe.calories);
-      var weight = JSON.stringify(res.hits[i].recipe.totalWeight);
+      var calories = Math.round(parseInt(JSON.stringify(res.hits[i].recipe.calories)));
+      var weight = Math.round(parseInt(JSON.stringify(res.hits[i].recipe.totalWeight)));
       var ingredients = res.hits[i].recipe.ingredients;
-      var ingredientsJ = JSON.stringify(res.hits[i].recipe.ingredients);
-      var dietLabels = JSON.stringify(res.hits[i].recipe.dietLabels);
-      
+      var dietLabels = null; 
+      if(JSON.stringify(res.hits[i].recipe.dietLabels) != '[]') {
+        dietLabels = JSON.stringify(res.hits[i].recipe.dietLabels);
+        dietLabels = dietLabels.replace('[', '');
+        dietLabels = dietLabels.replace(']', '');
+      }
       recipeNum = count + 1;
-
-      $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + 
-      '</div> <div class="yield">' + 'Serving size: ' + yield +  
-      '</div> <div class="calories">' + 'Calories (KCal): ' + calories + '</div><div class="weight">' + 'Weight (g): ' + weight + 
-      '</div> <div class="diet-labels">' + dietLabels + '</div> <div class="ingredients">' + 'Ingredients:<br>' + '</div></div>');
+      if(dietLabels == null) {
+        $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + 
+        '<div class="yield">' + 'Serving size: ' + yield +  
+        '</div> <div class="calories">' + 'Calories (KCal): ' + calories + '</div><div class="weight">' + 'Weight (g): ' + weight + 
+        '</div> <div class="ingredients">' + 'Ingredients:<br>' + '</div></div>');
+      } else {
+        $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + 
+        '<div class="yield">' + 'Serving size: ' + yield +  
+        '</div> <div class="calories">' + 'Calories (KCal): ' + calories + '</div><div class="weight">' + 'Weight (g): ' + weight + 
+        '</div> <div class="diet-labels">' + dietLabels + '</div> <div class="ingredients">' + 'Ingredients:<br>' + '</div></div>');
+      }
+      
 
       var arrayLength2 = ingredients.length;
 
       for (var j = 0; j < arrayLength2; j ++) {
         ingNum = count2 + 1;
         var info = JSON.stringify(ingredients[j].text);
-        //var weight1 = JSON.stringify(ingredients[j].weight);
         $('#listed-recipes').append('<div id="ingredients' + ingNum + '"><div class="info">' + info + '</div></div>');
         count2++;
       };
