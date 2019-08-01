@@ -11,6 +11,7 @@ $(document).ready(function() {
     var arrayLength = res.hits.length;
 
     for (var i = 0; i < arrayLength; i += 3) {
+      var picture = JSON.stringify(res.hits[i].recipe.image);
       var label = JSON.stringify(res.hits[i].recipe.label);
       var yield = JSON.stringify(res.hits[i].recipe.yield);
       var calories = Math.round(parseInt(JSON.stringify(res.hits[i].recipe.calories)));
@@ -24,12 +25,12 @@ $(document).ready(function() {
       }
       recipeNum = count + 1;
       if(dietLabels == null) {
-        $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + 
+        $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + '<img src =' + picture + '>' +
         '<div class="yield">' + 'Serving size: ' + yield +  
         '</div> <div class="calories">' + 'Calories (KCal): ' + calories + '</div><div class="weight">' + 'Weight (g): ' + weight + 
         '</div> <div class="ingredients">' + 'Ingredients:<br>' + '</div></div>');
       } else {
-        $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + 
+        $('#listed-recipes').append('<div id="recipe' + recipeNum + '"><div class="name">' + label + '<img src =' + picture + '>' + 
         '<div class="yield">' + 'Serving size: ' + yield +  
         '</div> <div class="calories">' + 'Calories (KCal): ' + calories + '</div><div class="weight">' + 'Weight (g): ' + weight + 
         '</div> <div class="diet-labels">' + dietLabels + '</div> <div class="ingredients">' + 'Ingredients:<br>' + '</div></div>');
