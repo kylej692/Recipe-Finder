@@ -37,51 +37,52 @@ recipes {
 
 }
 
+img {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+}
+
 .name {
     font-weight: 550;
-    font-size: 20px;
+    font-size: 30px;
     padding: 5px;
     border-top: solid 1px black;
 }
 
 .yield {
     font-weight: 550;
-    font-size: 20px;
+    font-size: 25px;
     padding: 5px;
 }
 
-.ingredients {
-    font-weight: 550;
+.ingredients-title {
+    font-weight: 500;
     font-size: 20px;
     padding: 5px;
 }
 
 .calories {
-    font-weight: 550;
+    font-weight: 500;
     font-size: 20px;
     padding: 5px;
 }
 
 .weight {
-    font-weight: 550;
+    font-weight: 500;
     font-size: 20px;
     padding: 5px;
 }
 
 .diet-labels {
     font-weight: 550;
-    font-size: 20px;
+    font-size: 25px;
     padding: 5px;
 }
 
 .info {
     font-weight: 550;
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px;
-}
-
-.ingredientweight {
-    font-weight: 550;
-    font-size: 20px;
-    padding: 5px;
+    border-bottom: dotted 1px black;
 }
