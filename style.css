@@ -52,7 +52,11 @@ img {
     font-weight: 550;
     font-size: 30px;
     padding: 5px;
-    border-top: solid 1px black;
+}
+
+.name:before {
+    content: '\A';
+    white-space: pre;
 }
 
 .yield {
@@ -91,3 +95,5 @@ img {
     padding: 5px;
     border-bottom: dotted 1px black;
 }
+
+

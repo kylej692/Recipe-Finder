@@ -11,7 +11,7 @@ $(document).ready(function() {
     var arrayLength = res.hits.length;
 
     if(arrayLength == 0) {
-      $('#listed-recipes').append('No recipes found for given food!');
+      alert('No recipes found for given food!');
     }
 
     for (var i = 0; i < arrayLength; i += 3) {
